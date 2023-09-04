@@ -13,10 +13,10 @@ from .views import (
 )
 
 urlpatterns = [
-    path('api/users/', UserListCreateAPIView.as_view(), name='user-list-create'),
-    path('api/users/<int:pk>/', UserRetrieveUpdateDestroyAPIView.as_view(), name='user-retrieve-update-destroy'),
-    path('api/users/create/', UserCreateView.as_view(), name='user-create'),
-    path('api/users/<int:pk>/detail/', UserDetailView.as_view(), name='user-detail-view'),
+    path('users/', UserListCreateAPIView.as_view(), name='user-list-create'),
+    path('users/<int:pk>/', UserRetrieveUpdateDestroyAPIView.as_view(), name='user-retrieve-update-destroy'),
+    path('users/create/', UserCreateView.as_view(), name='user-create'),
+    path('users/<int:pk>/detail/', UserDetailView.as_view(), name='user-detail-view'),
     
     # Добавлены новые пути для пагинации и фильтрации
     path('api/users/paginated/', UserList.as_view(), name='user-list-paginated'),

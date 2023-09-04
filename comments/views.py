@@ -41,79 +41,37 @@ class CommentUpdateView(UpdateAPIView):
 class CommentDeleteView(DestroyAPIView):
     queryset = Comment.objects.all()
 
+
 class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
+    @swagger_auto_schema(
+        operation_description="Get a list of comments",
+        responses={200: CommentSerializer(many=True)},
+    )
+    def list(self, request, *args, **kwargs):
+        return super().list(request, *args, **kwargs)
 
-# class CommentViewSet(viewsets.ModelViewSet):
-#     queryset = Comment.objects.all()
-#     serializer_class = CommentSerializer
+    @swagger_auto_schema(
+        operation_description="Create a new comment",
+        request_body=CommentSerializer(),
+        responses={201: CommentSerializer(), 400: "Invalid request data"},
+    )
+    def create(self, request, *args, **kwargs):
+        return super().create(request, *args, **kwargs)
 
-#     @swagger_auto_schema(
-#         method='get',
-#         operation_summary="Get a list of comments",
-#         operation_description="Retrieve a list of all comments.",
-#         responses={
-#             status.HTTP_200_OK: CommentSerializer(many=True),
-#         },
-#     )
-#     def list(self, request, *args, **kwargs):
-#         """
-#         Get a list of comments.
+    @swagger_auto_schema(
+        operation_description="Update a comment",
+        request_body=CommentSerializer(),
+        responses={200: CommentSerializer(), 400: "Invalid request data"},
+    )
+    def update(self, request, *args, **kwargs):
+        return super().update(request, *args, **kwargs)
 
-#         This endpoint allows you to retrieve a list of all comments.
-#         """
-#         return super().list(request, *args, **kwargs)
-
-#     @swagger_auto_schema(
-#         method='post',
-#         operation_summary="Create a new comment",
-#         operation_description="Create a new comment by providing comment details in the request data.",
-#         responses={
-#             status.HTTP_201_CREATED: CommentSerializer(),
-#             status.HTTP_400_BAD_REQUEST: "Invalid request data",
-#         },
-#     )
-#     def create(self, request, *args, **kwargs):
-#         """
-#         Create a new comment.
-
-#         This endpoint allows you to create a new comment.
-#         """
-#         return super().create(request, *args, **kwargs)
-
-#     @swagger_auto_schema(
-#         method='put',
-#         operation_summary="Update a comment",
-#         operation_description="Update an existing comment's details.",
-#         responses={
-#             status.HTTP_200_OK: CommentSerializer(),
-#             status.HTTP_400_BAD_REQUEST: "Invalid request data",
-#             status.HTTP_404_NOT_FOUND: "Comment not found",
-#         },
-#     )
-#     def update(self, request, *args, **kwargs):
-#         """
-#         Update a comment.
-
-#         This endpoint allows you to update an existing comment's details.
-#         """
-#         return super().update(request, *args, **kwargs)
-
-#     @swagger_auto_schema(
-#         method='delete',
-#         operation_summary="Delete a comment",
-#         operation_description="Delete an existing comment.",
-#         responses={
-#             status.HTTP_204_NO_CONTENT: "Comment deleted successfully",
-#             status.HTTP_404_NOT_FOUND: "Comment not found",
-#         },
-#     )
-#     def destroy(self, request, *args, **kwargs):
-#         """
-#         Delete a comment.
-
-#         This endpoint allows you to delete an existing comment.
-#         """
-#         return super().destroy(request, *args, **kwargs)
+    @swagger_auto_schema(
+        operation_description="Delete a comment",
+        responses={204: "No content"},
+    )
+    def destroy(self, request, *args, **kwargs):
+        return super().destroy(request, *args, **kwargs)

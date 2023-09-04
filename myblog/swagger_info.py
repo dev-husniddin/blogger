@@ -7,7 +7,7 @@ swagger_info = {
         'email': 'study.husniddin@gmail.com',
     },
     'license': {
-        'name': 'MIT Licevse',
+        'name': 'MIT License',
         'url': 'https://www.your-license-url.com/',
     },
 }
