@@ -3,7 +3,7 @@ from . import views
 from .views import CommentCreateView
 
 urlpatterns = [
-    # Маршруты для модели Comment
+    
     path('comments/', views.CommentListView.as_view(), name='comment-list'),
     path('comments/<int:pk>/', views.CommentDetailView.as_view(), name='comment-detail'),
     path('comments/create/', CommentCreateView.as_view(), name='comment-create'),

@@ -91,20 +91,14 @@ python manage.py makemigrations
 ```
 python manage.py migrate
 ```
-6) Загрузите фикстуры:
-```
-python manage.py load_users
-python manage.py load_posts
-python manage.py load_comments
-```
 7) Запустите сервер разработки: 
 ```
 python manage.py runserver
 ```
 Откройте админ-панель [localhost:8000/admin](http://localhost:8000/admin)
 
-Логин администратора по умолчанию:: admin@example.com
+Логин администратора: husniddin
 
-Пароль администратора по умолчанию: admin
+Пароль администратора: 1234
 
-Откройте документацию API Swagger [localhost:8000/api/v1/swagger-ui/](http://localhost:8000/swagger/)
+Откройте документацию API Swagger [localhost:8000/api/swagger/](http://localhost:8000/api/swagger/)

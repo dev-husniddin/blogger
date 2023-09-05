@@ -54,28 +54,28 @@ SWAGGER_SETTINGS = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # Время жизни access-токена (60 минут, можно изменить)
-    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),  # Время жизни refresh-токена (1 день, можно изменить)
-    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=120),  # Время жизни sliding-токена (2 часа, можно изменить)
-    'SLIDING_TOKEN_REFRESH_LIFETIME_GRACE_PERIOD': timedelta(minutes=5),  # Период, в течение которого можно обновить sliding-токен (5 минут, можно изменить)
-    'SLIDING_TOKEN_REFRESH_AFTER_INACTIVITY': timedelta(hours=1),  # Период неактивности пользователя, после которого sliding-токен можно обновить (1 час, можно изменить)
-    'SLIDING_TOKEN_REFRESH_SLIDING_DELTA': timedelta(minutes=30),  # Интервал обновления sliding-токена (30 минут, можно изменить)
-    'SLIDING_TOKEN_REFRESH_ON_LOGIN': True,  # Обновлять sliding-токен при входе пользователя (можно изменить)
-    'SLIDING_TOKEN_REFRESH_ON_REFRESH': True,  # Обновлять sliding-токен при обновлении refresh-токена (можно изменить)
-    'SLIDING_TOKEN_REFRESH_ON_ACTIVATION': False,  # Обновлять sliding-токен при активации (можно изменить)
-    'SLIDING_TOKEN_REFRESH_ON_PASSWORD_CHANGE': False,  # Обновлять sliding-токен при изменении пароля (можно изменить)
-    'SLIDING_TOKEN_REFRESH_ON_LOGOUT': False,  # Обновлять sliding-токен при выходе (можно изменить)
-    'SLIDING_TOKEN_REFRESH_ON_EMAIL_CONFIRMATION': False,  # Обновлять sliding-токен при подтверждении email (можно изменить)
-    'ALGORITHM': 'HS256',  # Алгоритм шифрования (можно изменить)
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  
+    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),  
+    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=120),  
+    'SLIDING_TOKEN_REFRESH_LIFETIME_GRACE_PERIOD': timedelta(minutes=5),  
+    'SLIDING_TOKEN_REFRESH_AFTER_INACTIVITY': timedelta(hours=1),  
+    'SLIDING_TOKEN_REFRESH_SLIDING_DELTA': timedelta(minutes=30),  
+    'SLIDING_TOKEN_REFRESH_ON_LOGIN': True,  
+    'SLIDING_TOKEN_REFRESH_ON_REFRESH': True,  
+    'SLIDING_TOKEN_REFRESH_ON_ACTIVATION': False,  
+    'SLIDING_TOKEN_REFRESH_ON_PASSWORD_CHANGE': False,  
+    'SLIDING_TOKEN_REFRESH_ON_LOGOUT': False,  
+    'SLIDING_TOKEN_REFRESH_ON_EMAIL_CONFIRMATION': False,  
+    'ALGORITHM': 'HS256',  
     'SIGNING_KEY': 'b1232ae9d25f05b795a31df898c4e8c2434f984e3110caedd2cffec42b28a0db',
     'VERIFYING_KEY': '6dd84d1d864b79cd247062a3d503025d382fda7033228ff9ef0884024bbcd253',
-    'AUTH_HEADER_TYPES': ('Bearer',),  # Тип заголовка аутентификации (можно изменить)
-    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),  # Классы токенов (можно изменить)
-    'USER_ID_CLAIM': 'user_id',  # Ключ, используемый для хранения ID пользователя в токене (можно изменить)
-    'USER_ID_FIELD': 'id',  # Поле, используемое для хранения ID пользователя (можно изменить)
-    'USER_EMAIL_FIELD': 'email',  # Поле, используемое для хранения email пользователя (можно изменить)
-    'UPDATE_LAST_LOGIN': True,  # Обновлять дату последнего входа пользователя (можно изменить)
-    'SLIDING_TOKEN_REFRESH_RESET': True,  # Сбрасывать sliding-токен при обновлении refresh-токена (можно изменить)
+    'AUTH_HEADER_TYPES': ('Bearer',),  
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),  
+    'USER_ID_CLAIM': 'user_id',  
+    'USER_ID_FIELD': 'id',  
+    'USER_EMAIL_FIELD': 'email',  
+    'UPDATE_LAST_LOGIN': True,  
+    'SLIDING_TOKEN_REFRESH_RESET': True,  
 }
 
 MIDDLEWARE = [

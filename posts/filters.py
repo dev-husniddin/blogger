@@ -6,4 +6,4 @@ class PostFilter(django_filters.FilterSet):
 
     class Meta:
         model = Post
-        fields = ['title', 'author']  # Указываете поля для фильтрации
+        fields = ['title', 'author']  

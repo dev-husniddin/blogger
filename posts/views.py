@@ -19,11 +19,11 @@ class PostRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
 
-class PostListView(generics.ListAPIView):  # Используйте generics.ListAPIView
+class PostListView(generics.ListAPIView):  
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     pagination_class = PostPagination
-    filter_class = PostFilter  # Добавляем фильтр
+    filter_class = PostFilter  
 
 class PostDetailView(generics.RetrieveAPIView):
     queryset = Post.objects.all()

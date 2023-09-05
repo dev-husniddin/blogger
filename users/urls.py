@@ -18,7 +18,7 @@ urlpatterns = [
     path('users/create/', UserCreateView.as_view(), name='user-create'),
     path('users/<int:pk>/detail/', UserDetailView.as_view(), name='user-detail-view'),
     
-    # Добавлены новые пути для пагинации и фильтрации
-    path('api/users/paginated/', UserList.as_view(), name='user-list-paginated'),
-    path('api/users/filtered/', UserFilterView.as_view(), name='user-list-filtered'),
+    
+    path('users/paginated/', UserList.as_view(), name='user-list-paginated'),
+    path('users/filtered/', UserFilterView.as_view(), name='user-list-filtered'),
 ]
